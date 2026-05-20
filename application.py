@@ -8,6 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
+import xgboost as xgb
 
 # -----------------------------------
 # CONFIG
@@ -1260,27 +1261,69 @@ if st.session_state.page == "Analysis":
     if analyze:
         runs_left = target - score
         balls_left = 120 - (overs * 6)
-        crr = score / overs if overs > 0 else 0
+        wickets_left = 10 - wickets  # Our model specifically trained on 'wickets_left'
+    
+        # Calculate balls bowled to ensure exact CRR match with training data
+        balls_bowled = 120 - balls_left
+    
+        # Safe CRR and RRR calculation (prevents division by zero errors on first/last balls)
+        crr = (score * 6) / balls_bowled if balls_bowled > 0 else 0
         rrr = (runs_left * 6) / balls_left if balls_left > 0 else 0
 
-        input_df = pd.DataFrame({
-            'batting_team': [batting_team],
-            'bowling_team': [bowling_team],
-            'city': ['Mumbai'],
-            'runs_left': [runs_left],
-            'balls_left': [balls_left],
-            'wickets': [10 - wickets],
-            'target': [target],
-            'crr': [crr],
-            'rrr': [rrr]
-        })
+        loaded_xgb = xgb.XGBClassifier()
+        loaded_xgb.load_model('xgb_win_prob_model.json')
+
+        # Map current UI team names to the historical names used during model training.
+        # The model was trained before aliases were applied, so it knows teams by their
+        # original names (e.g. "Kings XI Punjab" not "Punjab Kings").
+        UI_TO_MODEL_NAME = {
+            "Chennai Super Kings":        "Chennai Super Kings",
+            "Delhi Capitals":             "Delhi Capitals",
+            "Punjab Kings":               "Kings XI Punjab",
+            "Kolkata Knight Riders":      "Kolkata Knight Riders",
+            "Mumbai Indians":             "Mumbai Indians",
+            "Rajasthan Royals":           "Rajasthan Royals",
+            "Royal Challengers Bangalore":"Royal Challengers Bangalore",
+            "Sunrisers Hyderabad":        "Sunrisers Hyderabad",
+        }
+
+        # All one-hot columns the model was trained on (from the saved model's feature list).
+        # Historical/defunct teams must be present as zeros so the feature matrix matches exactly.
+        ALL_MODEL_TEAMS = [
+            "Chennai Super Kings", "Deccan Chargers", "Delhi Capitals", "Delhi Daredevils",
+            "Gujarat Lions", "Kings XI Punjab", "Kochi Tuskers Kerala", "Kolkata Knight Riders",
+            "Mumbai Indians", "Pune Warriors", "Rajasthan Royals", "Rising Pune Supergiant",
+            "Rising Pune Supergiants", "Royal Challengers Bangalore", "Sunrisers Hyderabad",
+        ]
+
+        # Build numerical features first, then one-hot columns — all 0 by default.
+        input_dict = {
+            'target_score':  target,
+            'runs_left':     runs_left,
+            'balls_left':    balls_left,
+            'crr':           crr,
+            'rrr':           rrr,
+            'wickets_left':  wickets_left,
+        }
+        for team in ALL_MODEL_TEAMS:
+            input_dict[f"bat_{team}"] = 0
+        for team in ALL_MODEL_TEAMS:
+            input_dict[f"bowl_{team}"] = 0
+
+        # Set the correct bat/bowl flags using the historical name mapping.
+        bat_col  = f"bat_{UI_TO_MODEL_NAME[batting_team]}"
+        bowl_col = f"bowl_{UI_TO_MODEL_NAME[bowling_team]}"
+        input_dict[bat_col]  = 1
+        input_dict[bowl_col] = 1
+
+        input_df = pd.DataFrame([input_dict])
 
         with st.spinner(""):
             time.sleep(0.4)
-            proba = pipe.predict_proba(input_df)[0]
+            result = loaded_xgb.predict_proba(input_df)
 
-        win = proba[1]
-        lose = proba[0]
+        loss = result[0][0]
+        win = result[0][1]
         st.session_state.prob_history.append(round(win * 100, 2))
 
         st.markdown('<div style="height: clamp(16px, 4vw, 28px);"></div>', unsafe_allow_html=True)
@@ -1328,7 +1371,7 @@ if st.session_state.page == "Analysis":
             """, unsafe_allow_html=True)
 
         with res_col2:
-            bowl_pct = round(lose * 100)
+            bowl_pct = round(loss * 100)
             st.markdown(f"""
                 <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
                             border-radius:24px; padding: clamp(20px, 5vw, 36px) clamp(16px, 4vw, 32px); position:relative;overflow:hidden;">
@@ -1370,7 +1413,7 @@ if st.session_state.page == "Analysis":
         # ---- SUMMARY ROW ----
         st.markdown('<div style="height: clamp(8px, 2vw, 16px);"></div>', unsafe_allow_html=True)
         verdict = batting_team if win > 0.5 else bowling_team
-        conf = max(win, lose)
+        conf = max(win, loss)
         conf_label = "High" if conf > 0.75 else "Moderate" if conf > 0.55 else "Close"
 
         st.markdown(f"""
