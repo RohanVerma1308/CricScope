@@ -81,6 +81,19 @@ Built with a fintech-inspired dark UI featuring glassmorphism cards, gold gradie
 
 <br/>
 
+## 📚 Documentation
+
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [License](LICENSE)
+
+<br/>
+
+---
+
+<br/>
+
 <div align="center">
 
 ## Architecture
@@ -189,6 +202,9 @@ trained on IPL ball-by-ball match data spanning IPL seasons from 2008–2020.
 ---
 
 <br/>
+
+
+
 
 <div align="center">
 
@@ -494,6 +510,16 @@ git push origin feature/your-feature-name
 - Respect UI consistency
 
 ---
+## 🔐 Security Policy
+
+Please review the [Security Policy](SECURITY.md) for vulnerability reporting guidelines and supported versions.
+
+---
+
+## 🤝 Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to the project.
+
 
 ### Good First Issues
 
@@ -543,6 +569,8 @@ Project Admin — GSSoC '26 & NSoC 2026
 
 <br/>
 
+
+
 <div align="center">
 ## Screenshots
 
@@ -565,6 +593,7 @@ If this project helped you, consider giving it a ⭐ on GitHub.
 It helps more contributors discover the project and motivates future development.
 
 <br/><br/>
+
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=d4af37&height=100&section=footer&animation=fadeIn" width="100%"/>
 
