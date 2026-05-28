@@ -1,1 +1,0 @@
-# CricScope themed component package
