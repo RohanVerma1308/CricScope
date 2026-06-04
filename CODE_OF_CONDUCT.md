@@ -1,6 +1,6 @@
 # Contributor Covenant Code of Conduct
 
-## ✦ Our Commitment
+## 🌟 Our Commitment
 
 We as contributors and maintainers pledge to make participation in the CricScope project a respectful, inclusive, and harassment-free experience for everyone.
 
@@ -19,9 +19,10 @@ We are committed to fostering an open and welcoming environment regardless of:
 
 ---
 
-# ✦ Expected Behavior
+# 🤝 Expected Behavior
 
 Examples of positive behavior include:
+
 - Being respectful and constructive
 - Welcoming new contributors
 - Accepting feedback gracefully
@@ -31,9 +32,10 @@ Examples of positive behavior include:
 
 ---
 
-# ✦ Unacceptable Behavior
+# 🚫 Unacceptable Behavior
 
 Examples of unacceptable behavior include:
+
 - Harassment or discrimination
 - Trolling or insulting comments
 - Personal or political attacks
@@ -43,7 +45,7 @@ Examples of unacceptable behavior include:
 
 ---
 
-# ✦ Enforcement Responsibilities
+# ⚖️ Enforcement Responsibilities
 
 Project maintainers are responsible for clarifying and enforcing community standards.
 
@@ -51,7 +53,7 @@ Maintainers may remove, edit, or reject comments, commits, issues, or pull reque
 
 ---
 
-# ✦ Reporting Issues
+# 📢 Reporting Issues
 
 If you experience or witness unacceptable behavior, please report it privately to the project maintainers.
 
@@ -59,7 +61,7 @@ All complaints will be reviewed and investigated promptly and fairly.
 
 ---
 
-# ✦ Community Standards
+# ❤️ Community Standards
 
 CricScope values:
 - Respectful collaboration
@@ -71,6 +73,6 @@ Together, we can build a healthy and welcoming open-source community.
 
 ---
 
-# ✦ Attribution
+# 📜 Attribution
 
 This Code of Conduct is adapted from the Contributor Covenant Code of Conduct.
