@@ -114,7 +114,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: rgba(212,175,55,0.45);
+    color: rgba(212,175,55,0.85);
     font-weight: 400;
 }
 
@@ -128,7 +128,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(180,160,100,0.35);
+    color: rgba(180,160,100,0.80);
     padding: 14px 32px 8px;
     font-weight: 500;
 }
@@ -140,7 +140,7 @@ section[data-testid="stSidebar"] > div {
     background: transparent;
     border: none;
     border-radius: 0;
-    color: rgba(220,210,180,0.65);
+    color: rgba(220,210,180,0.92);
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -195,7 +195,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(212,175,55,0.5);
+    color: rgba(212,175,55,0.90);
     margin-bottom: 18px;
     font-weight: 400;
 }
@@ -286,7 +286,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(200,185,140,0.4);
+    color: rgba(200,185,140,0.85);
 }
 
 /* ---- ANALYSIS SECTION ---- */
@@ -305,7 +305,7 @@ section[data-testid="stSidebar"] > div {
 
 .section-desc {
     font-size: 13px;
-    color: rgba(200,185,140,0.4);
+    color: rgba(200,185,140,0.85);
     letter-spacing: 0.3px;
 }
 
@@ -328,7 +328,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(212,175,55,0.5);
+    color: rgba(212,175,55,0.90);
     margin-bottom: 12px;
     font-weight: 500;
 }
@@ -348,7 +348,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px !important;
     letter-spacing: 1.8px !important;
     text-transform: uppercase !important;
-    color: rgba(200,185,140,0.5) !important;
+    color: rgba(200,185,140,0.88) !important;
     font-weight: 500 !important;
 }
 
@@ -393,7 +393,7 @@ section[data-testid="stSidebar"] > div {
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
     font-weight: 300;
-    color: rgba(212,175,55,0.25);
+    color: rgba(212,175,55,0.70);
     line-height: 1;
     letter-spacing: -2px;
 }
@@ -461,7 +461,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(212,175,55,0.4);
+    color: rgba(212,175,55,0.85);
     margin-bottom: 24px;
     font-weight: 500;
 }
@@ -491,7 +491,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(200,185,140,0.35);
+    color: rgba(200,185,140,0.80);
     margin-bottom: 28px;
 }
 
@@ -513,7 +513,7 @@ section[data-testid="stSidebar"] > div {
     border-radius: 100px;
     background: linear-gradient(90deg, #b8962e, #d4af37, #f0d060);
     transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 0 12px rgba(212,175,55,0.4);
+    box-shadow: 0 0 12px rgba(212,175,55,0.85);
 }
 
 .prob-bar-labels {
@@ -521,7 +521,7 @@ section[data-testid="stSidebar"] > div {
     justify-content: space-between;
     margin-top: 10px;
     font-size: 11px;
-    color: rgba(200,185,140,0.4);
+    color: rgba(200,185,140,0.85);
     font-family: 'DM Mono', monospace;
     letter-spacing: 0.5px;
 }
@@ -554,7 +554,7 @@ section[data-testid="stSidebar"] > div {
     font-size: 9px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(180,165,115,0.35);
+    color: rgba(180,165,115,0.78);
 }
 
 /* ---- STRAY STREAMLIT COMPONENTS ---- */
@@ -604,7 +604,7 @@ hr {
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #0c0c0c; }
-::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.70); border-radius: 4px; }
 
 /* ============================================================
    SIDEBAR PROFILE SECTION - Premium Glassmorphism
@@ -670,7 +670,7 @@ section[data-testid="stSidebar"] a:active {
     font-weight: 700;
     color: #0a0800;
     letter-spacing: 0.5px;
-    box-shadow: 0 0 0 2px rgba(212,175,55,0.25), 0 0 20px rgba(212,175,55,0.25), 0 3px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 2px rgba(212,175,55,0.70), 0 0 20px rgba(212,175,55,0.70), 0 3px 12px rgba(0,0,0,0.4);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
     z-index: 1;
@@ -678,7 +678,7 @@ section[data-testid="stSidebar"] a:active {
 }
 
 .profile-card:hover .profile-avatar {
-    box-shadow: 0 0 0 2px rgba(212,175,55,0.45), 0 0 26px rgba(212,175,55,0.35), 0 3px 14px rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 2px rgba(212,175,55,0.85), 0 0 26px rgba(212,175,55,0.35), 0 3px 14px rgba(0,0,0,0.5);
     transform: scale(1.04);
 }
 
@@ -841,11 +841,11 @@ section[data-testid="stSidebar"] a:active {
 }
 .matrix-cell.correct {
     background: rgba(212,175,55,0.06);
-    border: 1px solid rgba(212,175,55,0.25);
+    border: 1px solid rgba(212,175,55,0.70);
 }
 .matrix-cell.correct:hover {
     background: rgba(212,175,55,0.1);
-    border-color: rgba(212,175,55,0.45);
+    border-color: rgba(212,175,55,0.85);
     transform: translateY(-2px);
 }
 .matrix-cell.incorrect {
@@ -1269,7 +1269,7 @@ if st.session_state.page == "Dashboard":
     st.markdown("""
         <div style="padding: 48px 72px;">
             <div style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:3px;
-                        text-transform:uppercase; color:rgba(212,175,55,0.4); margin-bottom:28px;">
+                        text-transform:uppercase; color:rgba(212,175,55,0.85); margin-bottom:28px;">
                 IPL Teams
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:12px;">
@@ -1300,7 +1300,7 @@ if st.session_state.page == "Dashboard":
                                 color:{tdata['color']}; letter-spacing:2px; margin-top:12px;">
                         {tdata['abbr']}
                     </div>
-                    <div style="font-size:10px; color:rgba(200,185,140,0.35); margin-top:4px;
+                    <div style="font-size:10px; color:rgba(200,185,140,0.80); margin-top:4px;
                                 letter-spacing:0.5px;">
                         {team_name}
                     </div>
@@ -1316,7 +1316,7 @@ if st.session_state.page == "Dashboard":
             <div style="display:inline-block; background:rgba(212,175,55,0.06); border:1px solid rgba(212,175,55,0.15);
                         border-radius:14px; padding:20px 36px;">
                 <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;
-                            color:rgba(212,175,55,0.5);margin-bottom:8px;">Get Started</div>
+                            color:rgba(212,175,55,0.90);margin-bottom:8px;">Get Started</div>
                 <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#f0e8cc;font-weight:500;">
                     Open Match Analysis from the sidebar →
                 </div>
@@ -1497,7 +1497,7 @@ if st.session_state.page == "Analysis":
     # ---- INPUT SECTION ----
     st.markdown("""
         <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;
-                    color:rgba(212,175,55,0.4);margin-bottom:20px;font-weight:500;">
+                    color:rgba(212,175,55,0.85);margin-bottom:20px;font-weight:500;">
             Match Configuration
         </div>
     """, unsafe_allow_html=True)
@@ -1544,7 +1544,7 @@ if st.session_state.page == "Analysis":
 
     st.markdown("""
         <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;
-                    color:rgba(212,175,55,0.4);margin-bottom:16px;font-weight:500;">
+                    color:rgba(212,175,55,0.85);margin-bottom:16px;font-weight:500;">
             Fixture
         </div>
     """, unsafe_allow_html=True)
@@ -1687,7 +1687,7 @@ if st.session_state.page == "Analysis":
         st.markdown('<div style="height:28px;"></div>', unsafe_allow_html=True)
         st.markdown("""
             <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;
-                        color:rgba(212,175,55,0.4);margin-bottom:16px;font-weight:500;">
+                        color:rgba(212,175,55,0.85);margin-bottom:16px;font-weight:500;">
                 Prediction Output
             </div>
         """, unsafe_allow_html=True)
@@ -2084,7 +2084,7 @@ if st.session_state.page == "chabot":
         font-size: 10px;
         letter-spacing: 4px;
         text-transform: uppercase;
-        color: rgba(212,175,55,0.45);
+        color: rgba(212,175,55,0.85);
         margin-bottom: 8px;
         font-weight: 400;
     }
@@ -2160,7 +2160,7 @@ if st.session_state.page == "chabot":
         font-size: 10px;
         letter-spacing: 1.2px;
         text-transform: uppercase;
-        color: rgba(200,185,140,0.4);
+        color: rgba(200,185,140,0.85);
         font-weight: 500;
     }
  
@@ -2365,7 +2365,7 @@ if st.session_state.page == "chabot":
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: rgba(212,175,55,0.5);
+        background: rgba(212,175,55,0.90);
         animation: thinking-pulse 1.4s infinite ease-in-out;
     }
  
@@ -2392,7 +2392,7 @@ if st.session_state.page == "chabot":
     }
  
     [data-testid="stChatInput"]:focus-within {
-        border-color: rgba(212,175,55,0.45) !important;
+        border-color: rgba(212,175,55,0.85) !important;
         box-shadow: 0 0 0 3px rgba(212,175,55,0.06) !important;
     }
  
@@ -2420,7 +2420,7 @@ if st.session_state.page == "chabot":
     }
  
     [data-testid="stChatInputSubmitButton"] button:hover {
-        box-shadow: 0 4px 18px rgba(212,175,55,0.4) !important;
+        box-shadow: 0 4px 18px rgba(212,175,55,0.85) !important;
         transform: translateY(-1px) !important;
         filter: brightness(1.1) !important;
     }
